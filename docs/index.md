@@ -5,6 +5,9 @@ description: "This tutorial will help you get up and running querying the Canadi
 staff:
     - name: Kara Handren
       link: https://library.utoronto.ca/staff/kara-handren 
+maintainer:
+ - name: Kara Handren
+   link: https://library.utoronto.ca/staff/kara-handren
 created_date: 2023-01-05
 permalink: "/"  #! Remove this if not the homepage
 ---
