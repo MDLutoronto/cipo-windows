@@ -3,9 +3,16 @@ title: Query the Database via Python
 parent: Getting Started with the Canadian Intellectual Property Office (CIPO) Patent PostgreSQL Database - Windows
 layout: default
 nav_order: 4
+staff:
+    - name: Kara Handren
+      link: https://library.utoronto.ca/staff/kara-handren 
+maintainer:
+    - name: Leslie Barnes
+      link: https://library.utoronto.ca/staff/leslie-barnes
+created_date: 2023-01-05
 ---
 
-### Query the Database via Python
+## Query the Database via Python
 
 If you would like to programmatically construct your SQL statements (and programmatically manipulate the results), you may prefer to use Python code to query the database.
 
@@ -14,7 +21,6 @@ If Python is new for you, we would first suggest you learn the basics through a 
 1. In your favourite Python editor, write your script and save your file as a .py file. For this example, we will call it **mycipopythonscript.py**. Here is an example of a Python script that takes a list of companies and finds the patents that they own ([download the script](https://maps.library.utoronto.ca/docs/postgresql/CIPO/mycipopythonscript.py)- note that you may have to right click to save the Python script instead of viewing the text in a browser tab). This script creates a temporary table of our companies, and then joins that table to the assignee table to find the companies' patent document IDs (this is more efficient than calling multiple SELECT statements in a loop, one for each company). Then this table is joined with the title table to find the patent titles. You will see that this script uses the [psycopg2](https://www.psycopg.org/docs/index.html) package and provides information on how to connect to the database. You do not have to specify a username and password, as the system will automatically detect if you have permission. You can use this script and the SQL statement examples above, as guides to create your own Python code to query the database:
 
     ```
-
     # You need a couple of packages to query the database and write a CSV file
     import psycopg2
     import csv
@@ -75,7 +81,7 @@ If Python is new for you, we would first suggest you learn the basics through a 
     cur.close()
     con.close()
     ```
-2. Once your Python script is ready, connect to Trillium using MobaXterm [as described earlier](#access-the-high-performance-computing-environment)
+2. Once your Python script is ready, connect to Trillium using MobaXterm [as described earlier](https://mdlutoronto.github.io/cipo-windows/1-access-the-high-performance-computing-environment/)
 3. From the MobaXterm interface, you should see a sidebar to the left of your terminal window. Click on the orange globe icon on the far left to open the file explorer tab. This should now list all the files in your personal directory on the Trillium server
 4. Click on the upload icon at the top (looks like an arrow pointing up)
 5. You should be prompted to select the file you want to upload from your local computer. Select the file and then click on OK
@@ -85,6 +91,8 @@ If Python is new for you, we would first suggest you learn the basics through a 
 9. Finally type `pip install psycopg2-binary`
 10. Once the package has installed, you are ready to run your Python script. Type `python mycipopythonscript.py` or substitute in the name of your Python script if you called it something else.  
 (Important Note: If querying is only a small part of the overall task, and the majority of computing effort is going into postprocessing the query results, for example, using natural language processing or graph analysis, to be done in parallel, then there are different ways to run your script that involve [submitting it as a job](https://docs.scinet.utoronto.ca/index.php/Niagara_Quickstart#Submitting_jobs) to be run. Feel free to [contact us](https://mdl.library.utoronto.ca/about/contact-form) for help.)
-11. It may take a while to run, but when it is finished you will see the command prompt again, and now if you refresh your file directory in MobaXterm or type `ls`, you should see a new CSV file created from the Python script. Download the file ([as described earlier](#download-the-results)) and open up the file to see the results
+11. It may take a while to run, but when it is finished you will see the command prompt again, and now if you refresh your file directory in MobaXterm or type `ls`, you should see a new CSV file created from the Python script. Download the file ([as described earlier](https://mdlutoronto.github.io/cipo-windows/3-download-the-results/)) and open up the file to see the results
 
 These are just a few examples to help you get started, but of course there is much more you can do. If you have any questions, feel free to [contact us](https://mdl.library.utoronto.ca/about/contact-form).
+
+**Technique:** [Searching for maps and data](https://mdlutoronto.github.io/tutorials-search/?technique=Searching+for+maps+and+data), [Text and Data Mining](https://mdlutoronto.github.io/tutorials-search/?technique=Text+and+Data+Mining) \| **Tools:** [CIPO](https://mdlutoronto.github.io/tutorials-search/?tool=CIPO)

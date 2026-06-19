@@ -3,13 +3,19 @@ title: Query the Database via SQL
 parent: Getting Started with the Canadian Intellectual Property Office (CIPO) Patent PostgreSQL Database - Windows
 layout: default
 nav_order: 2
+staff:
+    - name: Kara Handren
+      link: https://library.utoronto.ca/staff/kara-handren 
+maintainer:
+    - name: Leslie Barnes
+      link: https://library.utoronto.ca/staff/leslie-barnes
+created_date: 2023-01-05
 ---
-
-### Query the Database via SQL
+## Query the Database via SQL
 
 If SQL is a new concept for you, we would first suggest you learn the basics through a tutorial, such as [this one from Tutorial Republic](https://www.tutorialrepublic.com/sql-tutorial/). You may also want to explore the [PostgreSQL documentation](https://www.postgresql.org/docs/14/index.html) to help you with your work.
 
-1. Once logged in [as described earlier](#access-the-high-performance-computing-environment), at the prompt, type `module load postgresql` (and press Enter after this and any commands you type into the command prompt going forward)
+1. Once logged in [as described earlier](https://mdlutoronto.github.io/cipo-windows/1-access-the-high-performance-computing-environment/), at the prompt, type `module load postgresql` (and press Enter after this and any commands you type into the command prompt going forward)
     * Note there will be no visible change or messages after running some of these commands
 2. Type `psql -h ibd1 -d cipo` to start up the command-line interface to PostgreSQL and be able to query the Canadian Intellectual Property Office (CIPO) Patent Database
 3. Type `\?` for help with psql commands (whenever you see “—More—” at the bottom of the screen, press the space bar to page through the information)
@@ -123,3 +129,5 @@ If SQL is a new concept for you, we would first suggest you learn the basics thr
 Throughout the examples, we have been using plain wildcard pattern matching, but you may want to explore [more sophisticated ways to search text](https://www.postgresql.org/docs/14/textsearch.html) as well.
 
 A Note on Query Efficiency: Generally, Postgres is really smart at analyzing what you want to do and querying the database in the most efficient way, so often changing the query structure won't make any difference because Postgres really does the same thing under the hood. One thing that sometimes helps is to increase the number of workers, for example with this command `SET max_parallel_workers_per_gather = 16`, but not all operations in a query can be parallelized or parallelized well. Another thing that potentially helps for complex queries is to use temporary tables instead of table variables. For example, [rewriting example g](http://maps.library.utoronto.ca/docs/postgresql/CIPO/cipo_exampleG_rewritten.txt) to use temporary tables - if this was a large query, it could speed that up from minutes to seconds!
+
+**Technique:** [Searching for maps and data](https://mdlutoronto.github.io/tutorials-search/?technique=Searching+for+maps+and+data), [Text and Data Mining](https://mdlutoronto.github.io/tutorials-search/?technique=Text+and+Data+Mining) \| **Tools:** [CIPO](https://mdlutoronto.github.io/tutorials-search/?tool=CIPO)
