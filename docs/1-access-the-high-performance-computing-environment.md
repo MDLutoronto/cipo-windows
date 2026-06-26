@@ -3,9 +3,16 @@ title: Accessing the High Performance Computing Environment
 parent: Getting Started with the Canadian Intellectual Property Office (CIPO) Patent PostgreSQL Database - Windows
 layout: default
 nav_order: 1
+staff:
+    - name: Kara Handren
+      link: https://library.utoronto.ca/staff/kara-handren 
+maintainer:
+    - name: Leslie Barnes
+      link: https://library.utoronto.ca/staff/leslie-barnes
+created_date: 2023-01-05
 ---
 
-### Accessing the High Performance Computing Environment
+## Accessing the High Performance Computing Environment
 
 If working in high performance computing environment is new to you, we would recommend you attend [SciNet workshops](https://education.scinet.utoronto.ca/) to learn more, especially their Intro to SciNet & Triullium workshop (run periodically) or watch [a recording of a previous session](https://www.youtube.com/@scinethpcattheuniversityof8962).
 
@@ -24,3 +31,5 @@ But here are some steps to get your started:
 10. Enter in your Compute Canada account password
 11. You are now connected to the server
 12. To log out, type `exit` and press Enter. Then press Enter again to close the tab
+
+**Technique:** [Searching for maps and data](https://mdlutoronto.github.io/tutorials-search/?technique=Searching+for+maps+and+data), [Text and Data Mining](https://mdlutoronto.github.io/tutorials-search/?technique=Text+and+Data+Mining) \| **Tools:** [CIPO](https://mdlutoronto.github.io/tutorials-search/?tool=CIPO)
